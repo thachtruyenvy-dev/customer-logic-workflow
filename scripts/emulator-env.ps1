@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Trỏ shell PowerShell hiện tại vào AWS Emulator đang chạy cục bộ.
 .DESCRIPTION
