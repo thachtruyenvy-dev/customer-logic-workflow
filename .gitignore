@@ -1,0 +1,40 @@
+# ---- Terraform ----
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.secret.tfvars
+.terraformrc
+terraform.rc
+*.tfplan
+tfplan
+# Lưu ý: .terraform.lock.hcl PHẢI được commit để khóa phiên bản provider
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# ---- Build artifact ----
+build/
+dist/
+.aws-sam/
+*.zip
+
+# ---- Biến môi trường (chỉ commit .env.example) ----
+.env
+.env.*
+!.env.example
+
+# ---- IDE / OS ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

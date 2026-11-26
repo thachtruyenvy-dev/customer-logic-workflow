@@ -1,0 +1,10 @@
+title = "customer-logic-workflow gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Chi cho phep file mau, khong chua gia tri that"
+paths = [
+  '''(^|/)\.env\.example$''',
+]

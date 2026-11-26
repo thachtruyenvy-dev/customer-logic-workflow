@@ -1,0 +1,4 @@
+# Chạy một lần tại thư mục gốc repo (đã chạy gh auth login)
+New-Item -ItemType Directory -Force .github | Out-Null
+$owner = gh api user --jq .login
+"* @$owner" | Set-Content -Path .github/CODEOWNERS -Encoding utf8

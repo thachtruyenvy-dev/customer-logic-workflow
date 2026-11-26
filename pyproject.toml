@@ -1,0 +1,35 @@
+[project]
+name = "customer-logic-workflow"
+version = "0.1.0"
+description = "He thong thong bao serverless: Lambda + SNS + SQS + DynamoDB"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "UP",  # pyupgrade
+  "S",   # flake8-bandit (bảo mật)
+  "C4",  # flake8-comprehensions
+  "SIM", # flake8-simplify
+  "N",   # pep8-naming
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]            # cho phép assert trong test
+"scripts/**" = ["S603", "S607"]  # script dev gọi subprocess có chủ đích
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+  "integration: test cần AWS Emulator (chạy bằng make test-integration)",
+]

@@ -1,0 +1,17 @@
+directory:
+  - infra
+framework:
+  - terraform
+quiet: true
+compact: true
+download-external-modules: false
+skip-check:
+  # ADR-004: Lambda cố ý không đặt trong VPC để tránh chi phí NAT Gateway
+  - CKV_AWS_117
+  # Bỏ code signing cho Lambda: dự án portfolio, chưa có pipeline ký code
+  - CKV_AWS_272
+  # Retention log 1 năm trái với chính sách FinOps: 7 ngày (dev) và 30 ngày (prod)
+  - CKV_AWS_338
+  # Log group và biến môi trường Lambda dùng khóa AWS managed ở dev (ADR-006)
+  - CKV_AWS_158
+  - CKV_AWS_173
