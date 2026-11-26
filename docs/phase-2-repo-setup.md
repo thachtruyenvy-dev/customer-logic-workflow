@@ -1061,6 +1061,7 @@ $env:AWS_DEFAULT_REGION                = $Region
 
 Write-Host "Shell này đang trỏ vào AWS Emulator tại $($env:AWS_ENDPOINT_URL) (region $Region)."
 Write-Host "Đóng shell này để quay về AWS thật. KHÔNG chạy terraform apply trong shell này."
+
 ```
 
 **Giải thích chi tiết:**
